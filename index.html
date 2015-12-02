@@ -55,11 +55,15 @@ input[type="email"]::-moz-placeholder {  /* Firefox 19+ */
 input[type="email"]:-ms-input-placeholder {  
   color: #ACC1C0;
 }
+.progress-button .content {
+  height: 77px;
+}
 .progress-button,
 .progress-button .content::before,
 .progress-button .content::after {
+  height: 77px;
   font-size: 1.3em;
-  line-height: 1.3em;
+  line-height: 77px;
   background-color: #5b8583;
 }
 </style>
@@ -91,6 +95,10 @@ input[type="email"]:-ms-input-placeholder {
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 (function() {
+  $('.form-mailing_list > button').click(function () {
+    var url = 'https://englishon.herokuapp.com/mailing_list?' + $('.form-mailing_list').serialize();
+    var pixel = $('<img>', {src: url}).css({position: 'absolute', opacity: 0}).appendTo($('body'));
+  });
   function changeNewspaper(index) {
     newspaper.preSelCurrent = index;
     newspaper._changeOption();
@@ -119,10 +127,6 @@ input[type="email"]:-ms-input-placeholder {
         }
       } );
     } );
-  $('.form-mailing_list > button').click(function () {
-    var url = 'https://englishon.herokuapp.com/mailing_list?' + $('.form-mailing_list').serialize();
-    var pixel = $('<img>', {src: url}).css({position: 'absolute', opacity: 0}).appendTo($('body'));
-  });
 })();
 </script>
 </body>
