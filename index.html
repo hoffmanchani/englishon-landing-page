@@ -87,7 +87,7 @@ input[type="email"]:-ms-input-placeholder {
 </select>
 <input type="email" name="email" placeholder="email"/>
 <button type="submit" class="progress-button" data-style="shrink" data-horizontal>Tell Me More!</button>
-<button type="submit" class="progress-button" data-style="shrink" data-horizontal>Try it!</button>
+<button class="progress-button" data-style="shrink" data-horizontal onclick="try_it()">Try it!</button>
 </form>
 </section>
 <script src="js/classie.js"></script>
@@ -129,6 +129,11 @@ input[type="email"]:-ms-input-placeholder {
       } );
     } );
 })();
+
+
+function try_it(){
+  console.log("try it");
+}
 </script>
 </body>
 </html>
